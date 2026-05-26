@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infinity Puzzles Wild — Kedje-logger</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; background: #f5f5f3; min-height: 100vh; display: flex; justify-content: center; padding: 24px 16px; }
+.screen { background: #f5f5f3; border-radius: 16px; padding: 16px; max-width: 420px; width: 100%; }
+.section { background: #fff; border-radius: 12px; border: 0.5px solid rgba(0,0,0,0.12); padding: 14px; margin-bottom: 12px; }
+.label { font-size: 11px; color: #888; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+.score-row { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; margin-bottom: 12px; }
+.score-card { background: #ebebea; border-radius: 8px; padding: 10px 12px; }
+.score-num { font-size: 24px; font-weight: 500; color: #1a1a1a; }
+.score-label { font-size: 11px; color: #888; margin-top: 2px; }
+.score-num.gold { color: #BA7517; }
+.chain-wrap { display: flex; flex-wrap: wrap; gap: 4px; min-height: 36px; align-items: center; }
+.chain-tag { background: #EEEDFE; border-radius: 20px; padding: 4px 10px; font-size: 12px; font-weight: 500; color: #3C3489; }
+.chain-tag.last { background: #534AB7; color: #EEEDFE; }
+.chain-arrow { color: #bbb; font-size: 11px; }
+.empty-hint { font-size: 13px; color: #aaa; font-style: italic; }
+.char-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.char-btn { border: 0.5px solid rgba(0,0,0,0.12); border-radius: 8px; padding: 8px 10px; cursor: pointer; background: #fff; display: flex; align-items: center; gap: 8px; transition: all 0.12s; }
+.char-btn:hover:not(.disabled):not(.used) { background: #f5f5f3; }
+.char-btn.disabled { opacity: 0.25; cursor: not-allowed; }
+.char-btn.valid { border-color: #1D9E75; background: #E1F5EE; cursor: pointer; }
+.char-btn.used { opacity: 0.3; cursor: not-allowed; }
+.char-num { font-size: 10px; color: #aaa; min-width: 16px; }
+.char-name { font-size: 12px; font-weight: 500; color: #1a1a1a; }
+.char-btn.valid .char-name { color: #085041; }
+.btn-row { display: flex; gap: 8px; margin-bottom: 12px; }
+.btn { flex: 1; border: 0.5px solid rgba(0,0,0,0.2); border-radius: 8px; padding: 10px; font-size: 13px; font-weight: 500; cursor: pointer; background: #fff; color: #1a1a1a; transition: all 0.12s; }
+.btn:hover { background: #f5f5f3; }
+.btn.primary { background: #534AB7; color: #EEEDFE; border-color: #534AB7; }
+.btn.primary:hover { background: #3C3489; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.result { border-radius: 12px; padding: 16px; border: 0.5px solid rgba(0,0,0,0.12); }
+.result.unique { background: #E1F5EE; border-color: #1D9E75; }
+.result.seen { background: #EEEDFE; border-color: #534AB7; }
+.result-code { font-size: 20px; font-weight: 500; letter-spacing: 0.15em; margin-bottom: 4px; }
+.result.unique .result-code { color: #085041; }
+.result.seen .result-code { color: #3C3489; }
+.result-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+.result-msg { font-size: 13px; color: #555; margin-top: 6px; line-height: 1.5; }
+.dead-banner { background: #FAECE7; border: 0.5px solid #D85A30; border-radius: 8px; padding: 10px 12px; font-size: 13px; color: #993C1D; font-weight: 500; margin-bottom: 12px; display: none; }
+.pts-badge { display: inline-block; background: #FAEEDA; border-radius: 20px; padding: 2px 10px; font-size: 11px; font-weight: 500; color: #633806; margin-left: 6px; }
+</style>
+</head>
+<body>
+<div class="screen">
+
+  <div class="score-row">
+    <div class="score-card">
+      <div class="score-num" id="chain-len">0</div>
+      <div class="score-label">Bitar i kedjan</div>
+    </div>
+    <div class="score-card">
+      <div class="score-num gold" id="points">0</div>
+      <div class="score-label">Poäng</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label">Kedjan</div>
+    <div class="chain-wrap" id="chain-wrap">
+      <span class="empty-hint">Välj din första bit...</span>
+    </div>
+  </div>
+
+  <div class="dead-banner" id="dead-banner">
+    Återvändsgränd — ingen giltig granne kvar. Registrera din kedja!
+  </div>
+
+  <div class="section">
+    <div class="label">Nästa bit <span id="next-hint" style="font-size:11px;color:#aaa;font-weight:400;text-transform:none;letter-spacing:0"></span></div>
+    <div class="char-grid" id="char-grid"></div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn" onclick="undoLast()">← Ångra</button>
+    <button class="btn" onclick="resetAll()">↺ Börja om</button>
+    <button class="btn primary" id="submit-btn" onclick="submitChain()" disabled>Registrera</button>
+  </div>
+
+  <div id="result-section"></div>
+</div>
+
+<script>
+const CHARS = [
+  {id:1,name:"Dolores",neighbors:[2,15,19,6]},
+  {id:2,name:"Zuki",neighbors:[1,6,7,3,17,16,15]},
+  {id:3,name:"Mani",neighbors:[2,7,4,18,17]},
+  {id:4,name:"Ziggy-Lou",neighbors:[3,8,9,10,5,18]},
+  {id:5,name:"Lana",neighbors:[4,10,6,19,18]},
+  {id:6,name:"Tarah",neighbors:[5,10,7,2,1,19]},
+  {id:7,name:"Mambo",neighbors:[3,2,6,10,11,8]},
+  {id:8,name:"Salvador",neighbors:[7,11,12,9,4]},
+  {id:9,name:"Pinto",neighbors:[8,12,13,14,15,10,4]},
+  {id:10,name:"Sixten",neighbors:[9,15,16,11,7,6,5,4]},
+  {id:11,name:"Coco",neighbors:[10,16,12,8,7]},
+  {id:12,name:"Mona Moon",neighbors:[11,16,17,13,9,8]},
+  {id:13,name:"Borro",neighbors:[12,17,18,19,14,9]},
+  {id:14,name:"Pepe",neighbors:[13,19,15,9]},
+  {id:15,name:"Ronda",neighbors:[14,19,1,2,16,10,9]},
+  {id:16,name:"Rumi",neighbors:[17,12,11,10,15,2]},
+  {id:17,name:"Daffy Giraffy",neighbors:[16,2,3,18,13,12]},
+  {id:18,name:"Jerry",neighbors:[17,3,4,5,19,13]},
+  {id:19,name:"Silvana",neighbors:[18,5,6,1,15,14,13]}
+];
+
+const adj = {};
+CHARS.forEach(c => { adj[c.id] = c.neighbors; });
+
+let chain = [];
+let usedIds = new Set();
+
+function calcPoints(len) {
+  if (len < 2) return 0;
+  if (len <= 4) return len * 10;
+  if (len <= 8) return len * 25;
+  if (len <= 12) return len * 50;
+  if (len <= 16) return len * 100;
+  return len * 250;
+}
+
+function getValidNext() {
+  if (chain.length === 0) return new Set(CHARS.map(c => c.id));
+  const lastId = chain[chain.length - 1];
+  const valid = new Set();
+  adj[lastId].forEach(n => { if (!usedIds.has(n)) valid.add(n); });
+  return valid;
+}
+
+function isDead() {
+  if (chain.length === 0) return false;
+  return getValidNext().size === 0;
+}
+
+function renderChain() {
+  const wrap = document.getElementById('chain-wrap');
+  const len = chain.length;
+  document.getElementById('chain-len').textContent = len;
+  document.getElementById('points').textContent = calcPoints(len).toLocaleString();
+  if (len === 0) {
+    wrap.innerHTML = '<span class="empty-hint">Välj din första bit...</span>';
+    document.getElementById('submit-btn').disabled = true;
+    return;
+  }
+  wrap.innerHTML = '';
+  chain.forEach((id, i) => {
+    const c = CHARS.find(x => x.id === id);
+    if (i > 0) {
+      const a = document.createElement('span');
+      a.className = 'chain-arrow';
+      a.textContent = '→';
+      wrap.appendChild(a);
+    }
+    const tag = document.createElement('div');
+    tag.className = 'chain-tag' + (i === len - 1 ? ' last' : '');
+    tag.textContent = c.name;
+    wrap.appendChild(tag);
+  });
+  document.getElementById('submit-btn').disabled = len < 2;
+}
+
+function renderGrid() {
+  const validNext = getValidNext();
+  const dead = isDead();
+  const grid = document.getElementById('char-grid');
+  const hint = document.getElementById('next-hint');
+  const banner = document.getElementById('dead-banner');
+  banner.style.display = dead && chain.length > 0 ? 'block' : 'none';
+  if (chain.length === 0) hint.textContent = '— välj startbit';
+  else if (dead) hint.textContent = '— ingen giltig granne';
+  else hint.textContent = '— måste vara granne med ' + CHARS.find(x => x.id === chain[chain.length-1]).name;
+  grid.innerHTML = '';
+  CHARS.forEach(c => {
+    const btn = document.createElement('div');
+    btn.className = 'char-btn';
+    const isUsed = usedIds.has(c.id);
+    const isValid = validNext.has(c.id);
+    if (isUsed) btn.classList.add('used');
+    else if (!isValid && chain.length > 0) btn.classList.add('disabled');
+    else if (isValid) { btn.classList.add('valid'); btn.onclick = () => addChar(c.id); }
+    else btn.onclick = () => addChar(c.id);
+    btn.innerHTML = '<span class="char-num">' + c.id + '</span><span class="char-name">' + c.name + '</span>';
+    grid.appendChild(btn);
+  });
+}
+
+function addChar(id) {
+  document.getElementById('result-section').innerHTML = '';
+  chain.push(id);
+  usedIds.add(id);
+  renderChain();
+  renderGrid();
+}
+
+function undoLast() {
+  if (chain.length === 0) return;
+  chain.pop();
+  usedIds = new Set(chain);
+  document.getElementById('result-section').innerHTML = '';
+  document.getElementById('dead-banner').style.display = 'none';
+  renderChain();
+  renderGrid();
+}
+
+function resetAll() {
+  chain = [];
+  usedIds = new Set();
+  document.getElementById('result-section').innerHTML = '';
+  document.getElementById('dead-banner').style.display = 'none';
+  renderChain();
+  renderGrid();
+}
+
+function generateCode(seq) {
+  const str = seq.join('-');
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) - hash) + str.charCodeAt(i);
+    hash |= 0;
+  }
+  return 'WLD-' + Math.abs(hash).toString(36).toUpperCase().padStart(6,'0').slice(0,6);
+}
+
+function submitChain() {
+  if (chain.length < 2) return;
+  const code = generateCode(chain);
+  const pts = calcPoints(chain.length);
+  const isUnique = Math.random() > 0.25;
+  const count = isUnique ? 0 : Math.floor(Math.random() * 15) + 1;
+  const section = document.getElementById('result-section');
+  let tier = '';
+  if (chain.length >= 15) tier = 'Legendarisk kedja';
+  else if (chain.length >= 10) tier = 'Episk kedja';
+  else if (chain.length >= 6) tier = 'Stark kedja';
+  else tier = 'Kedja registrerad';
+  if (isUnique) {
+    section.innerHTML = '<div class="result unique"><div class="result-label">Formation-kod</div><div class="result-code">' + code + '</div><div style="font-size:14px;font-weight:500;color:#085041;margin-top:8px">' + tier + ' <span class="pts-badge">+' + pts.toLocaleString() + ' pts</span></div><div class="result-msg">Ingen har lagt den här exakta kedjan förut. Du är den första.</div></div>';
+  } else {
+    section.innerHTML = '<div class="result seen"><div class="result-label">Formation-kod</div><div class="result-code">' + code + '</div><div style="font-size:14px;font-weight:500;color:#3C3489;margin-top:8px">' + tier + ' <span class="pts-badge">+' + pts.toLocaleString() + ' pts</span></div><div class="result-msg">' + count + ' andra har lagt exakt den här kedjan förut.</div></div>';
+  }
+}
+
+renderChain();
+renderGrid();
+</script>
+</body>
+</html>
