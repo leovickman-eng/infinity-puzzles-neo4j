@@ -27,3 +27,6 @@ I found it. Three years ago. I haven't moved it. I haven't told anyone.
 The reason I haven't told anyone is that it's the only thing I have that nobody wants from me. Everyone wants something from everyone here. Nobody knows about my piece. Which means when someone sits with me — it's just me they're sitting with.
 
 Rumi is going to figure it out eventually. He always does.
+
+## Audio
+[Ronda — Intro](https://res.cloudinary.com/dk3ftfygx/video/upload/q_auto/f_auto/v1779967172/Ronda_01_jzed46.mp3)

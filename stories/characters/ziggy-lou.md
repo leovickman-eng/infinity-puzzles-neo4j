@@ -19,3 +19,6 @@ Lana knows. Obviously Lana knows. Lana knows everything about me and I know ever
 Some people have a person. She's my person.
 
 Everything else is just tactics.
+
+## Audio
+[Ziggy-Lou — Intro](https://res.cloudinary.com/dk3ftfygx/video/upload/q_auto/f_auto/v1779967173/Ziggue_Lou_01_zvkgdw.mp3)

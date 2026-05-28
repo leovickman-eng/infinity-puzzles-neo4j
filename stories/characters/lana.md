@@ -21,3 +21,6 @@ That's the deal. She said it herself — she just got the direction slightly wro
 She's my person. I'm hers. The difference is I've always known it went both ways.
 
 Everything else is just tactics.
+
+## Audio
+[Lana — Intro](https://res.cloudinary.com/dk3ftfygx/video/upload/q_auto/f_auto/v1779967172/Lana_01_xn4st0.mp3)

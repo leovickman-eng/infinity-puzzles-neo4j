@@ -22,3 +22,6 @@ I know what I'm here to do. That's a rare thing. I don't take it lightly.
 I'm Pinto. And I'm just getting started.
 
 Welcome to the Wild.
+
+## Audio
+[Pinto — Intro](https://res.cloudinary.com/dk3ftfygx/video/upload/q_auto/f_auto/v1779967171/Pinto_01_jx1xyz.mp3)
