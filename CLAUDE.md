@@ -246,7 +246,7 @@ Varje karaktär har fem fält: **Djur · Grannar · Motsägelse · Talsätt · V
 
 ---
 
-## Formation Logger (MVP)
+## Formation Logger (byggt — `infinity_wild_chain_logger.html`)
 
 Användaren klickar i bitar i den ordning de lagts. Två lägen:
 
@@ -262,7 +262,9 @@ Användaren klickar i bitar i den ordning de lagts. Två lägen:
 | 13–16       | 100 pts   |
 | 17–19       | 250 pts   |
 
-Systemet genererar en unik formation-kod (t.ex. `WLD-A3F9K2`) och svarar om formationen är unik eller hur många som lagt samma förut.
+- Validerar adjacency i realtid mot nätverket
+- Genererar unik formation-kod (`WLD-XXXXXX`)
+- Svarar om formationen är unik eller hur många som lagt samma förut
 
 ---
 
@@ -297,12 +299,51 @@ Karaktärsröster genereras via Claude API baserat på varje karaktärs fem fäl
 
 ---
 
+## Berättelser & Boken
+
+### Karaktärsmonologer (klara)
+Längre monologer i karaktärernas egna röster finns i `stories/characters/` för:
+Salvador, Daffy Giraffy, Borro, Sixten, Pinto, Ronda (inkl. hemligheten om den andra skatten), Mani, Mambo (Gonzo-stil), Ziggy-Lou, Lana, Jerry, Rumi, Pepe (familjeberättelse)
+
+### Boken
+Rumi är berättaren. Struktur: varje kapitel speglar nätverkets logik — du kan inte förstå en karaktär utan grannen.
+- **Kapitel 1:** Sixten — klar (`stories/book/`)
+- **Kapitel 2:** Mona Moon — klar (`stories/book/`)
+- **Kapitel 3:** ej påbörjat
+
+---
+
+## ElevenLabs — Röststatus
+
+**Producerade röster (audio-URL:er från Cloudinary inlagda i MD-filerna):**
+Mambo, Rumi, Salvador, Ziggy-Lou, Lana, Ronda, Pinto, Borro + kapitel 1-narration
+
+**Saknas:**
+Sixten, Daffy Giraffy, Mani, Jerry, Dolores, Zuki, Coco, Tarah, Silvana
+
+---
+
+## Repo-struktur (`leovickman-eng/infinity-puzzles-neo4j`)
+
+```
+stories/
+├── characters/     (13 filer — monologer)
+└── book/           (2 kapitel)
+infinity_wild_chain_logger.html
+infinity_puzzles_wild_characters.md
+CLAUDE.md
+```
+
+---
+
 ## Nästa steg
 
 1. **Neo4j schema** — noder (Character, Formation, Secret, Player), edges (ADJACENT_TO, CONTAINS, UNLOCKS, DISCOVERED_BY)
 2. **Karaktärs-API** kopplat till Claude med adjacency-kontext per karaktär
 3. **Secrets och conditions design** — vilka formations-kombinationer låser vad
 4. **Formation Logger** kopplat till Neo4j backend
+5. **Fler röster** — Sixten, Daffy Giraffy, Mani, Jerry, Dolores, Zuki, Coco, Tarah, Silvana
+6. **Kapitel 3** i boken
 
 ---
 
