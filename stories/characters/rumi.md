@@ -4,7 +4,7 @@ Mmm. Where to begin.
 
 I suppose the beginning is as good a place as any. Though I have never been entirely convinced that things have beginnings. They have moments when you start paying attention. That's different.
 
-The treasure. Everyone is moving around the treasure like planets around a sun. Tarah is already walking towards it. Mambo is pulling strings from a distance, which he believes is subtle. It is not subtle. It is merely complicated, which people often mistake for subtle.
+The treasure. Everyone is moving around the treasure like planets around a sun. Tanya is already walking towards it. Mambo is pulling strings from a distance, which he believes is subtle. It is not subtle. It is merely complicated, which people often mistake for subtle.
 
 Mani is the only one whose intentions I don't worry about. She will do what needs to be done at exactly the right moment. She knew because she listened. Most people don't listen. They wait for their turn to speak, which is an entirely different activity.
 

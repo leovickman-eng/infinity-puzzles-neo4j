@@ -12,7 +12,7 @@ The treasure is not where it belongs. That sounds simple. It is simple.
 
 Lana guards it like it is hers. I understand this. She made a journey that would have broken most creatures. But finding something does not make it yours. It just makes you the one who found it.
 
-Tarah wants it for herself. I want to give it back. Those are not the same errand. And only one of them will work.
+Tanya wants it for herself. I want to give it back. Those are not the same errand. And only one of them will work.
 
 Mambo is the piece I've been waiting to place. He can travel through time. What he doesn't know is that I have seen what happens if the treasure stays where it is.
 

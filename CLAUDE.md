@@ -35,7 +35,7 @@ Varje nummer = karaktär. Nätverket är **toroidalt** — ingen kant, kan tile 
 3  Mani          → 2, 4, 7, 17, 18
 4  Ziggy-Lou     → 3, 5, 8, 9, 10, 18
 5  Lana Manana   → 4, 6, 10, 18, 19
-6  Tarah         → 1, 2, 5, 7, 10, 19
+6  Tanya         → 1, 2, 5, 7, 10, 19
 7  Mambo Viento  → 2, 3, 6, 8, 10, 11
 8  Salvador      → 4, 7, 9, 11, 12
 9  Pinto         → 4, 8, 10, 12, 13, 14, 15
@@ -46,9 +46,9 @@ Varje nummer = karaktär. Nätverket är **toroidalt** — ingen kant, kan tile 
 14 Pepe          → 9, 13, 15, 19
 15 Ronda         → 1, 2, 9, 10, 14, 16, 19
 16 Rumi          → 2, 10, 11, 12, 15, 17
-17 Daffy Giraffy → 2, 3, 12, 13, 16, 18
+17 Daffy → 2, 3, 12, 13, 16, 18
 18 Jerry         → 3, 4, 5, 13, 17, 19
-19 Silvana       → 1, 5, 6, 13, 14, 15, 18
+19 Mira       → 1, 5, 6, 13, 14, 15, 18
 ```
 
 ---
@@ -100,7 +100,7 @@ Varje karaktär har fem fält: **Djur · Grannar · Motsägelse · Talsätt · V
 **Motsägelse:** Talar som brittisk overclass — bär Inka-världens tyngsta hemlighet
 **Talsätt:** *"How fascinating. Truly."* *(Det är inte alltid en komplimang.)*
 **Vad hon vill:** Att skatten förblir där den är tills världen är redo
-**Hemlighet:** Lana har genom en spirituell resa sett var en uråldrig Inka-skatt är gömd. Hon är dess väktare — inte dess ägare. Hon och Ziggy-Lou är de enda som vet. Vad Lana inte vet är att Tarah och Mambo redan är på väg.
+**Hemlighet:** Lana har genom en spirituell resa sett var en uråldrig Inka-skatt är gömd. Hon är dess väktare — inte dess ägare. Hon och Ziggy-Lou är de enda som vet. Vad Lana inte vet är att Tanya och Mambo redan är på väg.
 
 ---
 
@@ -109,7 +109,7 @@ Varje karaktär har fem fält: **Djur · Grannar · Motsägelse · Talsätt · V
 **Motsägelse:** Lugn och integritet utanpå — en plan som ingen anar innanpå
 **Talsätt:** *"Jag vet vart jag ska."* *(Och det är allt hon säger.)*
 **Vad hon vill:** Skatten. Punkt.
-**Hemlighet:** Tarah vet var Lana Mananas skatt är gömd och tänker ta den. Hon har planerat länge. Mambo Viento har sett det hända — i en annan tid. Han har inte sagt något. Tarah tror hon jobbar ensam. Det gör hon inte.
+**Hemlighet:** Tanya vet var Lana Mananas skatt är gömd och tänker ta den. Hon har planerat länge. Mambo Viento har sett det hända — i en annan tid. Han har inte sagt något. Tanya tror hon jobbar ensam. Det gör hon inte.
 
 ---
 
@@ -118,7 +118,7 @@ Varje karaktär har fem fält: **Djur · Grannar · Motsägelse · Talsätt · V
 **Motsägelse:** Uråldig och allvetande — kan knappt hålla sig i luften i den här världen
 **Talsätt:** *"Det har redan hänt. Du vet bara inte om det än."*
 **Vad han vill:** Komma åt skatten — men kan inte göra det själv
-**Hemlighet:** Mambo har byggt en osynlig kedja — Coco, Sixten, Lana — utan att någon vet att de är länkade. Han har sett slutet. Han vet vad som krävs. Frågan är om Tarah hinner först. Och om Mani låter något av det ske.
+**Hemlighet:** Mambo har byggt en osynlig kedja — Coco, Sixten, Lana — utan att någon vet att de är länkade. Han har sett slutet. Han vet vad som krävs. Frågan är om Tanya hinner först. Och om Mani låter något av det ske.
 
 ---
 
@@ -208,7 +208,7 @@ Varje karaktär har fem fält: **Djur · Grannar · Motsägelse · Talsätt · V
 **Motsägelse:** Den mest avslappnade av alla — bär på universumets längsta perspektiv
 **Talsätt:** *"Mmm. Ja. Det löser sig."* *(Det gör det alltid, för honom.)*
 **Vad han vill:** Ingenting just nu. Han väntar.
-**Hemlighet:** Daffy Giraffy är den enda i Wild som passar in i nästa pussel. Han vet om det. Han har alltid vetat att han hör hemma i två världar samtidigt. Han väntar på att den andra ska dyka upp.
+**Hemlighet:** Daffy är den enda i Wild som passar in i nästa pussel. Han vet om det. Han har alltid vetat att han hör hemma i två världar samtidigt. Han väntar på att den andra ska dyka upp.
 
 ---
 
@@ -226,13 +226,13 @@ Varje karaktär har fem fält: **Djur · Grannar · Motsägelse · Talsätt · V
 **Motsägelse:** Kommer från den hårdaste platsen — bär på den mjukaste visheten
 **Talsätt:** *"Jag har sett öknen blomma. Du har ingen aning om vad som är möjligt."*
 **Vad hon vill:** Ingenting mer än det hon redan har — hon är hel
-**Hemlighet:** Öknen lärde Silvana något ingen annan vet — att liv blommar starkast där ingen tror det är möjligt. Hon bär på en karta över dolda oaser. Platser där det omöjliga händer. Hon delar den bara med de som förtjänar att veta.
+**Hemlighet:** Öknen lärde Mira något ingen annan vet — att liv blommar starkast där ingen tror det är möjligt. Hon bär på en karta över dolda oaser. Platser där det omöjliga händer. Hon delar den bara med de som förtjänar att veta.
 
 ---
 
 ## Spänningslinjer i universumet
 
-**Skatten** — Lana väktaren (vet inte att den är stulen), Ziggy-Lou systern/skyddet, Tarah tjuven, Mambo spelaren, Mani den rättfärdiga (vill återlämna till Inka), Jerry som kanske redan hittat den
+**Skatten** — Lana väktaren (vet inte att den är stulen), Ziggy-Lou systern/skyddet, Tanya tjuven, Mambo spelaren, Mani den rättfärdiga (vill återlämna till Inka), Jerry som kanske redan hittat den
 
 **Unicorn Club** — Dolores (narval/beskyddare), Zuki (rådjur, horn på väg — den väntade), Mambo (drake, två horn), Borro (noshörning, vet inte vad hans horn betyder)
 
@@ -242,7 +242,7 @@ Varje karaktär har fem fält: **Djur · Grannar · Motsägelse · Talsätt · V
 
 **Rumi väntar** — på att någon lägger alla 19 och ställer rätt fråga. Triggar hemlig animation.
 
-**Daffy Giraffy** — enda biten som passar i nästa pussel-set
+**Daffy** — enda biten som passar i nästa pussel-set
 
 ---
 
@@ -303,7 +303,7 @@ Karaktärsröster genereras via Claude API baserat på varje karaktärs fem fäl
 
 ### Karaktärsmonologer (klara)
 Längre monologer i karaktärernas egna röster finns i `stories/characters/` för:
-Salvador, Daffy Giraffy, Borro, Sixten, Pinto, Ronda (inkl. hemligheten om den andra skatten), Mani, Mambo (Gonzo-stil), Ziggy-Lou, Lana, Jerry, Rumi, Pepe (familjeberättelse)
+Salvador, Daffy, Borro, Sixten, Pinto, Ronda (inkl. hemligheten om den andra skatten), Mani, Mambo (Gonzo-stil), Ziggy-Lou, Lana, Jerry, Rumi, Pepe (familjeberättelse)
 
 ### Boken
 Rumi är berättaren. Struktur: varje kapitel speglar nätverkets logik — du kan inte förstå en karaktär utan grannen.
@@ -319,7 +319,7 @@ Rumi är berättaren. Struktur: varje kapitel speglar nätverkets logik — du k
 Mambo, Rumi, Salvador, Ziggy-Lou, Lana, Ronda, Pinto, Borro + kapitel 1-narration
 
 **Saknas:**
-Sixten, Daffy Giraffy, Mani, Jerry, Dolores, Zuki, Coco, Tarah, Silvana
+Sixten, Daffy, Mani, Jerry, Dolores, Zuki, Coco, Tanya, Mira
 
 ---
 
@@ -342,7 +342,7 @@ CLAUDE.md
 2. **Karaktärs-API** kopplat till Claude med adjacency-kontext per karaktär
 3. **Secrets och conditions design** — vilka formations-kombinationer låser vad
 4. **Formation Logger** kopplat till Neo4j backend
-5. **Fler röster** — Sixten, Daffy Giraffy, Mani, Jerry, Dolores, Zuki, Coco, Tarah, Silvana
+5. **Fler röster** — Sixten, Daffy, Mani, Jerry, Dolores, Zuki, Coco, Tanya, Mira
 6. **Kapitel 3** i boken
 
 ---

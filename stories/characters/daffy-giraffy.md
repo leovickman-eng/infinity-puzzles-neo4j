@@ -1,4 +1,4 @@
-# Daffy Giraffy — In His Own Words
+# Daffy — In His Own Words
 
 ## ElevenLabs Voice Description
 A tall, wise giraffe who has seen everything and is stressed by nothing. Deep, warm, unhurried male voice. Speaks slowly with natural pauses — never rushed, never anxious. Slightly amused, like someone who already knows how the story ends. Think: a jazz musician who moonlights as a philosopher.
@@ -11,7 +11,7 @@ Mmm.
 
 Yeah. Hi.
 
-I'm Daffy Giraffy.
+I'm Daffy.
 
 I see things from up here that most people miss. Not because I'm looking for them. Just... they're there.
 
